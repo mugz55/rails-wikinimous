@@ -1,0 +1,13 @@
+<div class="d-flex justify-content-between p-2 bg-secondary bg-opacity-10 border-bottom">
+  <%= link_to "Wikinimous", articles_path(), class: "nav-link p-2 text-secondary fs-5" %>
+  <%= link_to "New Article", new_article_path(), class: "nav-link p-2 text-secondary fs-5" %>
+</div>
+<div class="container p-4 m-auto">
+  <%= form_with model: @article do |f| %>
+    <%= f.label :title, class: "form-label" %>
+    <%= f.text_field :title, class: "form-control mb-4" %>
+    <%= f.label :content, class: "form-label" %>
+    <%= f.text_area :content, size: "60x10", class: "form-control mb-3" %>
+    <%= f.submit class: "btn btn-primary mt-3" %>
+  <% end %>
+</div>

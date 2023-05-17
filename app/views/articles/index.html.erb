@@ -1,13 +1,18 @@
-<div>
-  <%= link_to "Wikinimous", articles_path() %>
+<div class="d-flex justify-content-between p-2 bg-secondary bg-opacity-10 border-bottom">
+  <%= link_to "Wikinimous", articles_path(), class: "nav-link p-2 text-secondary fs-5" %>
+  <%= link_to "New Article", new_article_path(), class: "nav-link p-2 text-secondary fs-5" %>
 </div>
-<div>
-  <ul>
-    <% @articles.each do |article| %>
-      <li>
-        <%= link_to article.title, article_path(article) %>
+<div class="container p-5">
+  <% @articles.each do |article| %>
+    <div class="row justify-content-center">
+      <div class="col-6">
+        <%= link_to article.title, article_path(article), class: "fs-2 text-decoration-none" %>
+      </div>
+    </div>
+    <div class="row justify-content-center pb-3">
+      <div class="col-6">
         <%= article.content[0..50]%>
-      </li>
-    <% end %>
-  </ul>
+      </div>
+    </div>
+  <% end %>
 </div>
